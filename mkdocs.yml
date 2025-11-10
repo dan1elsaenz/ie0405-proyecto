@@ -1,0 +1,64 @@
+site_name: Proyecto de Programación de Modelos Probabilísticos
+
+nav:
+  - Inicio: index.md
+  - Objetivos: objetivos.md
+  - Recopilación: recopilacion.md
+  - Almacenamiento: almacenamiento.md
+  - Exploración: exploracion.md
+  - Modelado: modelado.md
+  - Instrucciones: instrucciones.md
+  - Requisitos: requisitos.md
+  - Atributos: atributos.md
+
+theme: 
+  name: material
+  language: es
+  palette:
+    primary: red
+  logo: images/plot.png
+  favicon: images/plot.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.integrate
+    - content.tooltips
+    - content.code.copy
+    - content.code.annotate 
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - md_in_html
+  - footnotes
+  - abbr
+  - attr_list
+  - def_list
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  generator: false
