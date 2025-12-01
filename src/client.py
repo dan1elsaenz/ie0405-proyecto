@@ -39,7 +39,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def on_connect(client, rc):
+def on_connect(client, userdata, flags, rc, properties=None):
     """Maneja el evento de conexión del cliente al broker MQTT.
 
     Si la conexión es exitosa (rc == 0), se suscribe al tópico configurado.
@@ -53,7 +53,7 @@ def on_connect(client, rc):
         logger.error("Fallo al conectar al broker MQTT: %d", rc)
 
 
-def on_message(msg):
+def on_message(client, userdata, msg):
     """Maneja la recepción de un mensaje desde el broker MQTT.
 
     - Decodifica el payload (UTF-8 o Latin-1 como respaldo).
@@ -106,7 +106,7 @@ def on_message(msg):
         logger.error("Error al procesar mensaje: %s", e, exc_info=True)
 
 
-def on_disconnect(rc):
+def on_disconnect(client, userdata, flags, rc, properties=None):
     """Maneja el evento de desconexión del cliente del broker MQTT.
 
     Distingue entre una desconexión esperada (rc == 0) y una inesperada.
@@ -132,10 +132,9 @@ def main():
     client_id = f"subscriber-{uuid.uuid4()}"
     logger.info("Usando ID de cliente: %s", client_id)
 
-    # Crear cliente MQTT usando la API de callbacks versión 2
+    # Crear cliente MQTT (sin parámetros extra no soportados)
     client = mqtt.Client(
         client_id=client_id,
-        callback_api_version=CallbackAPIVersion.VERSION2,
     )
 
     # Configurar credenciales para autenticación en el broker
