@@ -34,7 +34,7 @@ uv sync
 
 ## Configuración de entorno virtual
 
-En el archivo `.venv`, debe colocar el siguiente contenido utilizado en el caso personal:
+Crear archivo `.env` y colocar el siguiente contenido utilizado en el caso personal:
 
 ```sh
 MQTT_HOST=mqtt.simovi.org
