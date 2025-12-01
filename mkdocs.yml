@@ -2,16 +2,14 @@ site_name: Proyecto de Programación de Modelos Probabilísticos
 
 nav:
   - Inicio: index.md
-  - Objetivos: objetivos.md
-  - Recopilación: recopilacion.md
-  - Almacenamiento: almacenamiento.md
-  - Exploración: exploracion.md
-  - Modelado: modelado.md
-  - Instrucciones: instrucciones.md
-  - Requisitos: requisitos.md
-  - Atributos: atributos.md
+  - Instrucciones de uso: uso.md
+  - Problema: problema.md
+  - Datos: datos.md
+  - Modelos: modelos.md
+  - Análisis: analisis.md
+  - Conclusiones: conclusiones.md
 
-theme: 
+theme:
   name: material
   language: es
   palette:
@@ -26,7 +24,7 @@ theme:
     - toc.integrate
     - content.tooltips
     - content.code.copy
-    - content.code.annotate 
+    - content.code.annotate
 
 extra_javascript:
   - javascripts/katex.js
