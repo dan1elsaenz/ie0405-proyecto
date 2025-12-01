@@ -44,6 +44,13 @@ def on_connect(client, userdata, flags, rc, properties=None):
 
     Si la conexión es exitosa (rc == 0), se suscribe al tópico configurado.
     En caso contrario, registra el código de error.
+
+    Parameters
+    ----------
+    client : paho.mqtt.client.Client
+        Instancia del cliente MQTT que se conecta al broker.
+    rc : int
+        Código de retorno de la conexión. Un valor 0 indica conexión exitosa.
     """
     if rc == 0:
         logger.info("Conectado al broker MQTT en %s:%d", MQTT_HOST, MQTT_PORT)
@@ -60,6 +67,11 @@ def on_message(client, userdata, msg):
     - Intenta parsear JSON; si falla, guarda el texto crudo.
     - Si el mensaje contiene 'first_name' y 'last_name', lo almacena
       en la base de datos junto con el tópico y la marca de tiempo.
+
+    Parameters
+    ----------
+    msg : paho.mqtt.client.MQTTMessage
+        Objeto que encapsula el mensaje recibido, incluyendo tópico y payload.
     """
     try:
         topic = msg.topic
@@ -110,6 +122,12 @@ def on_disconnect(client, userdata, flags, rc, properties=None):
     """Maneja el evento de desconexión del cliente del broker MQTT.
 
     Distingue entre una desconexión esperada (rc == 0) y una inesperada.
+
+    Parameters
+    ----------
+    rc : int
+        Código de retorno de la desconexión. Un valor 0 indica desconexión
+        iniciada de forma local o controlada.
     """
     if rc != 0:
         logger.warning(
@@ -132,9 +150,10 @@ def main():
     client_id = f"subscriber-{uuid.uuid4()}"
     logger.info("Usando ID de cliente: %s", client_id)
 
-    # Crear cliente MQTT (sin parámetros extra no soportados)
+    # Crear cliente MQTT
     client = mqtt.Client(
         client_id=client_id,
+        callback_api_version=CallbackAPIVersion.VERSION2
     )
 
     # Configurar credenciales para autenticación en el broker
