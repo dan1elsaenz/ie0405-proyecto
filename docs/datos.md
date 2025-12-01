@@ -59,6 +59,7 @@ La siguiente tabla presenta las estadísticas descriptivas experimentales obteni
 | Máximo | 230.6151 s |
 | Media | 37.1053 s |
 | Mediana | 26.7258 s |
+| Varianza | 1329.9235 s\(^2\) |
 | Desviación estándar | 36.4681 s |
 | Cuartil 25% | 10.9562 s |
 | Cuartil 75% | 50.0776 s |

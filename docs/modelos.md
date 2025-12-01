@@ -50,9 +50,9 @@ Los parámetros estimados fueron:
 
 | Parámetro | Valor |
 |----------:|------:|
-| `loc`     | 0.006002 s |
-| `scale`   | 37.099344 s |
-| \(\lambda = 1/\text{scale}\) | 0.026955 s\(^{-1}\) |
+| `loc`     | 0.00600 s |
+| `scale`   | 37.09934 s |
+| \(\lambda = 1/\text{scale}\) | 0.02695 s\(^{-1}\) |
 
 La PDF del modelo seleccionado resultó en la expresión a continuación con parámetro \(\lambda = 0.02695\):
 
@@ -72,7 +72,7 @@ Los momentos teóricos obtenidos a partir del modelo se resumen en la tabla a co
 | Momento | Expresión teórica | Valor obtenido |
 |--------:|----------:|----------------:|
 | Media | `loc` + `scale` | 37.1053 s |
-| Varianza | \(1/\lambda^2\) | 1376.36 s\(^2\) |
+| Varianza | \(1/\lambda^2\) | 1376.3614 s\(^2\) |
 | Desviación estándar | \(1/\lambda\) | 37.0993 s |
 | Inclinación | \(2\) | 2.0 |
 | Kurtosis | \(6\) | 6.0 |

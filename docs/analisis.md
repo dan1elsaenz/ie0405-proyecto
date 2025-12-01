@@ -18,6 +18,7 @@ Al aplicar un procedimiento sistemático basado en máxima verosimilitud (MLE) y
 | Estadístico | Datos reales | Modelo exponencial |
 |------------:|-------------:|-------------------:|
 | Media | 37.1053 s | 37.1053 s |
+| Varianza | 1329.9235 s\(^2\) | 1376.3614 s\(^2\) |
 | Desviación estándar | 36.4681 s | 37.0993 s |
 | Skewness | 1.8130 | 2.0 |
 | Kurtosis | 4.1415 | 6.0 |
@@ -25,6 +26,7 @@ Al aplicar un procedimiento sistemático basado en máxima verosimilitud (MLE) y
 !!! info "Análisis entre datos reales y modelo"
 
     - **Media y desviación estándar:** presentan coincidencia casi exacta, lo cual es un indicador importante de compatibilidad entre datos y modelo.
+    - **Varianza:** En este caso, el hecho de que la varianza empírica sea un poco menor que la del modelo indica que los tiempos entre eventos reales presentan ligeramente menos dispersión que la que predice una exponencial, pero la diferencia es poco significativa.
     - **Inclinación:** ambos valores indican un comportamiento asimétrico hacia la derecha.
     - **Kurtosis:** la exponencial teórica tiene colas más pesadas que las de los datos reales. Esto implica que el proceso observado tiene menor probabilidad de generar intervalos extremadamente grandes, aunque sigue mostrando un patrón general compatible con una exponencial.
 
