@@ -2,8 +2,8 @@ site_name: Proyecto de Programación de Modelos Probabilísticos
 
 nav:
   - Inicio: index.md
-  - Instrucciones de uso: uso.md
   - Problema: problema.md
+  - Instrucciones de uso: uso.md
   - Datos: datos.md
   - Modelos: modelos.md
   - Análisis: analisis.md
